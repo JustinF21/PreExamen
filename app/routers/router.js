@@ -7,6 +7,7 @@ const libros = require('../controllers/libro.controller.js');
 const autores = require('../controllers/autor.controller.js');
 const huespedes = require('../controllers/huesped.controller.js');
 
+
 //Tabla usuarios
 router.post('/api/usuarios/create', usuarios.create);
 router.get('/api/usuarios/onebyid/:id', usuarios.getUsuarioById);
