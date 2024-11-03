@@ -17,14 +17,12 @@ module.exports = (sequelize, Sequelize) => {
         Telefono: {
             type: Sequelize.STRING
         },
-        correo_elctronico:{
-            type: Sequelize.INTEGER
+        correo_electronico: {  // Corrected field name
+            type: Sequelize.STRING
         },
         habitacion: {
             type: Sequelize.STRING
-        },
-        
-
+        }
     });
     return Huesped;
 };
