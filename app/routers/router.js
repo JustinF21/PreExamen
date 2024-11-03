@@ -5,6 +5,7 @@ let router = express.Router();
 const usuarios = require('../controllers/usuario.controller.js');
 const libros = require('../controllers/libro.controller.js');
 const autores = require('../controllers/autor.controller.js');
+const huespedes = require('../controllers/huesped.controller.js');
 
 //Tabla usuarios
 router.post('/api/usuarios/create', usuarios.create);
@@ -23,5 +24,11 @@ router.post('/api/autores/create', autores.create);
 router.get('/api/autores/onebyid/:id', autores.getAutorById);
 router.put('/api/autores/update/:id', autores.updateById);
 router.delete('/api/autores/delete/:id', autores.deleteById);
+
+router.post('/api/huespedes/create', huespedes.create);
+router.get('/api/huespedes/onebyid/:id', huespedes.getHuespedById);
+router.put('/api/huespedes/update/:id', huespedes.updateById);
+router.delete('/api/huespedes/delete/:id', huespedes.deleteById);
+
 
 module.exports = router;
