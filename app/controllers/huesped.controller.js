@@ -10,21 +10,22 @@ exports.create = (req, res) => {
         correo_electronico: req.body.correo_electronico, // Asegúrate de que el nombre del campo coincida
         habitacion: req.body.habitacion
     };
-
     Huesped.create(huesped)
-        .then(result => {
-            res.status(201).json({
-                message: "Huésped creado exitosamente con id = " + result.id_Huesped,
-                huesped: result,
-            });
-        })
-        .catch(error => {
-            res.status(500).json({
-                message: "¡Fallo al crear el huésped!",
-                error: error.message
-            });
+    .then(result => {
+        res.status(201).json({
+            message: "Huésped creado exitosamente con id = " + result.id_Huesped,
+            huesped: result,
         });
+    })
+    .catch(error => {
+        console.error("Error al crear el huésped:", error); // Ver detalles del error
+        res.status(500).json({
+            message: "¡Fallo al crear el huésped!",
+            error: error.message
+        });
+    });
 };
+
 
 exports.retrieveAllHuespedes = (req, res) => {
     Huesped.findAll()
